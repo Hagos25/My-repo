@@ -17,12 +17,15 @@ const CustomButton=(props)=>{
 const styles=StyleSheet.create({
     container:{
         height:60,
-        marginLeft:'20%',
-        marginRight:'20%',
+        marginLeft:'5%',
+        marginRight:'5%',
         backgroundColor:'#7133ff',
         marginTop:10,
-        
-        borderRadius: 5,
+        alignItems: 'center',
+         justifyContent:'center',
+         lignSelf: 'stretch',
+ borderRadius: 8,
+   
     },
     text:{
         fontSize:16,

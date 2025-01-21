@@ -1,11 +1,12 @@
 
+
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const Login = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+const SignIns = () => {
+  const [username, setUsername] = useState('ewefwgwrgw');
+  const [password, setPassword] = useState('gergergrgrgrwg');
   const [isUsernameValid, setIsUsernameValid] = useState(false);
   const [isPasswordValid, setIsPasswordValid] = useState(false);
 
@@ -25,11 +26,9 @@ const Login = () => {
         <Icon name="arrow-back" size={24} color="white" />
       </TouchableOpacity>
 
-      {/* Green Background with Sign In Button */}
-      <View style={styles.greenBackground}>
-        <TouchableOpacity style={styles.signInGreenButton}>
-          <Text style={styles.signInButtonText}>Sign In</Text>
-        </TouchableOpacity>
+      {/* "Sign In" Section */}
+      <View style={styles.blueBackground}>
+        <Text style={styles.signInText}>Sign In</Text>
       </View>
 
       {/* Welcome Back Section */}
@@ -41,9 +40,9 @@ const Login = () => {
       {/* Username Input */}
       <Text style={styles.inputLabel}>Username</Text>
       <TextInput
-        style={styles.hiddenInput}
+        style={styles.input}
         placeholder="Enter username"
-        placeholderTextColor="#ccc"
+        placeholderTextColor="#888"
         value={username}
         onChangeText={handleUsernameChange}
       />
@@ -52,9 +51,9 @@ const Login = () => {
       {/* Password Input */}
       <Text style={styles.inputLabel}>Password</Text>
       <TextInput
-        style={styles.hiddenInput}
+        style={styles.input}
         placeholder="Enter password"
-        placeholderTextColor="#ccc"
+        placeholderTextColor="#888"
         secureTextEntry={true}
         value={password}
         onChangeText={handlePasswordChange}
@@ -66,8 +65,8 @@ const Login = () => {
         <Text style={styles.forgetPasswordText}>Forget Password?</Text>
       </TouchableOpacity>
 
-      {/* Gray Sign In Button */}
-      <TouchableOpacity style={styles.grayButton}>
+      {/* Sign In Button */}
+      <TouchableOpacity style={styles.signInButton}>
         <Text style={styles.signInButtonText}>Sign In</Text>
       </TouchableOpacity>
 
@@ -92,24 +91,19 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 20,
     right: 20,
+    color:'white'
   },
-  greenBackground: {
-    backgroundColor: 'blue',
+  blueBackground: {
+    backgroundColor: '#007BFF',
     paddingVertical: 40,
-    marginBottom: 5,
+    marginBottom: 10,
     borderRadius: 8,
     alignItems: 'center',
   },
-  signInGreenButton: {
-    backgroundColor: 'blue',
-    paddingVertical: 15,
-    paddingHorizontal: 50,
-    borderRadius: 8,
-  },
-  signInButtonText: {
-    color: 'white',
-    fontSize: 18,
+  signInText: {
+    fontSize: 28,
     fontWeight: 'bold',
+    color: '#fff',
   },
   welcomeSection: {
     alignItems: 'center',
@@ -131,7 +125,7 @@ const styles = StyleSheet.create({
     color: '#333',
     marginBottom: 8,
   },
-  hiddenInput: {
+  input: {
     height: 50,
     borderWidth: 1,
     borderColor: '#ccc',
@@ -139,8 +133,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     fontSize: 16,
     marginBottom: 20,
-    backgroundColor: '#ddd',
-    color: '#aaa',
+    backgroundColor: '#fff',
   },
   forgetPasswordText: {
     fontSize: 14,
@@ -149,11 +142,16 @@ const styles = StyleSheet.create({
     textAlign: 'right',
     marginBottom: 20,
   },
-  grayButton: {
-    backgroundColor: 'gray',
+  signInButton: {
+    backgroundColor: '#007BFF',
     paddingVertical: 15,
     borderRadius: 8,
     alignItems: 'center',
+  },
+  signInButtonText: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold',
   },
   signUpSection: {
     position: 'absolute',
@@ -174,4 +172,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default SignIns;

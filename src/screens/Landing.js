@@ -1,4 +1,4 @@
-import { StyleSheet,View, Text, Image,TouchableOpacity} from "react-native";
+import { StyleSheet,View, Text, Image,TouchableOpacity, Button} from "react-native";
 import Heading from "../components/Heading";
 import SubHeading from "../components/SubHeading";
 import SubHeadingSe from "../components/SubHeadingSe";
@@ -12,7 +12,7 @@ const Landing =props =>{
        <SubHeadingSe text={'Samelessly& intuitively'}/>
        <TouchableOpacity>
        
-       <CustomButton title={'Singin with google'} secondButton ={true}/>
+       <CustomButton title={'Singin with google'} secondButton ={true} style={styles.Button}/>
        <CustomButton title={'Create anAccount'} />
        </TouchableOpacity>
         </View>
@@ -22,13 +22,18 @@ const styles=StyleSheet.create({
     container:{
         flex:1,
         alignItems: 'center',
-        justifyContent: 'flex-start',
+        
+
     },
     image:{
         height:200,
-        width:200,
-        marginTop: 20,
-        marginTop: 10
+        width:250,
+        marginTop: 80,
+        
+    },
+    Button:{
+        width: '100%'
+
     }
 })
 

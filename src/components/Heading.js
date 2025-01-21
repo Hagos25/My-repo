@@ -9,7 +9,8 @@ const styles=StyleSheet.create({
     text:{
         fontSize:24,
         fontWeight:'bold',
-        alignSelf:'center'
+        alignSelf:'center',
+        width:'100%'
     }
 })
 

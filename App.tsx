@@ -26,10 +26,11 @@ function App(): React.JSX.Element {
   
 
   return (
-    <SafeAreaView style={styles.backgroundStyles}>
-     <AsyncLogin/>
-    
-  </SafeAreaView>
+    <View > 
+    <Welcome/>
+    <Login/>
+      <SignIns/>
+      </View>
     
   );
 }

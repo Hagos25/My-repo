@@ -21,19 +21,19 @@ import Landing from './src/screens/Landing';
 import Login from './src/screens/Login';
 import SignIns from './src/screens/SignIns';
 import Welcome from './src/screens/Welcome';
+import AsyncLogin from './src/components/AsyncLogin';
 function App(): React.JSX.Element {
   
 
   return (
-    <SafeAreaView style={styles.backgroundStyles}>
+    <View > 
     <Welcome/>
-      
-    
-  </SafeAreaView>
+    <Login/>
+      <SignIns/>
+      </View>
     
   );
 }
-
 const styles = StyleSheet.create({
   backgroundStyles:{
     flex:1,

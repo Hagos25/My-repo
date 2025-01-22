@@ -25,32 +25,16 @@ function App(): React.JSX.Element {
   
 
   return (
-    <View style={styles.container}> 
+    <SafeAreaView style={styles.backgroundStyles}>
     <Welcome/>
-    <Login/>
-      <SignIns/>
-      </View>
+      
+    
+  </SafeAreaView>
     
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row', // This arranges the screens side by side
-    flex: 1,
-  },
-  screen: {
-    flex: 1, // Ensures each screen takes equal space
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    fontSize: 24,
-    color: '#fff',
-  },
-});
-
-/*const styles = StyleSheet.create({
   backgroundStyles:{
     flex:1,
     backgroundColor:'blue',
@@ -61,5 +45,5 @@ const styles = StyleSheet.create({
     fontSize:18
   }
 });
-*/
+
 export default App;

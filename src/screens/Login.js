@@ -1,44 +1,54 @@
 
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+
+import {  useNavigation } from '@react-navigation/native';
+import { Alert } from 'react-native';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [isUsernameValid, setIsUsernameValid] = useState(false);
-  const [isPasswordValid, setIsPasswordValid] = useState(false);
+  {/*const [isUsernameValid, setIsUsernameValid] = useState(false);*/}
+  {/*const [isPasswordValid, setIsPasswordValid] = useState(false);*/}
+ const navigation=useNavigation()
 
+ const onSignInsPressed=()=>{
+  Alert.alert('Navigation Object:', navigation); 
+  navigation.navigate('Main');
+
+  console.log(navigation);
+ }
+ 
   const handleUsernameChange = (text) => {
     setUsername(text);
-    setIsUsernameValid(text.length >= 3);
+   { /*setIsUsernameValid(text.length );*/}
   };
   const handlePasswordChange = (text) => {
     setPassword(text);
-    setIsPasswordValid(text.length >= 6);
+   { /*setIsPasswordValid(text.length );*/}
   };
 
   return (
     <View style={styles.container}>
-      {/* Top Arrow */}
-      <TouchableOpacity style={styles.topArrow}>
+     
+    { /* <TouchableOpacity style={styles.topArrow} onPress={() => navigation.goBack()}>
         <Icon name="arrow-back" size={24} color="white" />
       </TouchableOpacity>
-
-      {/* Green Background with Sign In Button */}
+*/}
+     
       <View style={styles.greenBackground}>
-        <TouchableOpacity style={styles.signInGreenButton}>
+        <TouchableOpacity style={styles.signInGreenButton} onPress={onSignInsPressed}>
           <Text style={styles.signInButtonText}>Sign In</Text>
         </TouchableOpacity>
       </View>
 
-      {/* Welcome Back Section */}
+    
       <View style={styles.welcomeSection}>
         <Text style={styles.welcomeText}>Welcome Back</Text>
         <Text style={styles.subText}>Please sign in to continue</Text>
       </View>
 
-      {/* Username Input */}
+  
       <Text style={styles.inputLabel}>Username</Text>
       <TextInput
         style={styles.hiddenInput}
@@ -47,9 +57,9 @@ const Login = () => {
         value={username}
         onChangeText={handleUsernameChange}
       />
-      {isUsernameValid && <Icon name="checkmark-circle" size={24} color="green" />}
+      {/*{isUsernameValid && <Icon name="checkmark-circle" size={24} color="green" />}*/}
 
-      {/* Password Input */}
+     
       <Text style={styles.inputLabel}>Password</Text>
       <TextInput
         style={styles.hiddenInput}
@@ -59,19 +69,19 @@ const Login = () => {
         value={password}
         onChangeText={handlePasswordChange}
       />
-      {isPasswordValid && <Icon name="checkmark-circle" size={24} color="green" />}
+    {/* {isPasswordValid && <Icon name="checkmark-circle" size={24} color="green" />}*/}
 
-      {/* Forget Password */}
+    
       <TouchableOpacity>
         <Text style={styles.forgetPasswordText}>Forget Password?</Text>
       </TouchableOpacity>
 
-      {/* Gray Sign In Button */}
+     
       <TouchableOpacity style={styles.grayButton}>
         <Text style={styles.signInButtonText}>Sign In</Text>
       </TouchableOpacity>
 
-      {/* Sign Up Section at the Bottom */}
+     
       <View style={styles.signUpSection}>
         <Text style={styles.noAccountText}>Don't have an account?</Text>
         <TouchableOpacity>
@@ -116,6 +126,7 @@ const styles = StyleSheet.create({
     marginVertical: 20,
   },
   welcomeText: {
+    extAlign: 'left', 
     fontSize: 24,
     fontWeight: 'bold',
     color: '#333',

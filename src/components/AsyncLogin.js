@@ -9,7 +9,7 @@ const LoginScreen = () => {
   const [storedPassword, setStoredPassword] = useState('');
 
   useEffect(() => {
-    // Retrieve stored username and password on component mount
+    
     const getStoredData = async () => {
       const user = await AsyncStorage.getItem('username');
       const pass = await AsyncStorage.getItem('password');
@@ -23,7 +23,7 @@ const LoginScreen = () => {
     getStoredData();
   }, []);
 
-  // Save username and password in AsyncStorage
+  
   const saveData = async () => {
     try {
       await AsyncStorage.setItem('username', username);
@@ -34,7 +34,7 @@ const LoginScreen = () => {
     }
   };
 
-  // Retrieve username and password from AsyncStorage
+ 
   const getData = async () => {
     try {
       const user = await AsyncStorage.getItem('username');
@@ -49,7 +49,7 @@ const LoginScreen = () => {
     }
   };
 
-  // Remove username and password from AsyncStorage
+ 
   const removeData = async () => {
     try {
       await AsyncStorage.removeItem('username');
@@ -60,7 +60,7 @@ const LoginScreen = () => {
     }
   };
 
-  // Clear all AsyncStorage data
+  
   const clearData = async () => {
     try {
       await AsyncStorage.clear();
@@ -70,7 +70,7 @@ const LoginScreen = () => {
     }
   };
 
-  // Get all keys in AsyncStorage
+  
   const getAllKeys = async () => {
     try {
       const keys = await AsyncStorage.getAllKeys();
@@ -105,7 +105,7 @@ const LoginScreen = () => {
       <Button title="Clear All Data" onPress={clearData} />
       <Button title="Get All Keys" onPress={getAllKeys} />
 
-      {/* Display Stored Data */}
+    
       {storedUsername && storedPassword && (
         <Text style={styles.storedData}>
           Stored Username: {storedUsername}{"\n"}Stored Password: {storedPassword}

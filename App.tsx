@@ -4,34 +4,27 @@
  *
  * @format
  */
+import './gesture-handler.native'
 
 import React from 'react';
 
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
+  
   StyleSheet,
-  Text,
-  useColorScheme,
+  
   View,
 } from 'react-native';
 
-import Landing from './src/screens/Landing';
-import Login from './src/screens/Login';
-import SignIns from './src/screens/SignIns';
-import Welcome from './src/screens/Welcome';
-import AsyncLogin from './src/components/AsyncLogin';
+import Getprofile from './src/screens/GetProfil';
+
+import AppNavigation from './src/navigation/Index';
 function App(): React.JSX.Element {
   
-
   return (
-    <View > 
-    <Welcome/>
-    <Login/>
-      <SignIns/>
-      </View>
-    
+    <View style={styles.backgroundStyles}>
+  <AppNavigation/>
+   
+   </View>
   );
 }
 const styles = StyleSheet.create({

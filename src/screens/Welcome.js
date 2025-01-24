@@ -1,7 +1,15 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
-
+import { createStaticNavigation ,useNavigation,} from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import MainClass from './MainClass';
+import MainScreen from './MainScreen';
+import Login from './Login';
 const Welcome = () => {
+  const navigation = useNavigation();
+  const onLoginPressed=()=>{
+    navigation.navigate('Login');
+  }
   return (
     <View style={styles.container}>
       
@@ -11,28 +19,24 @@ const Welcome = () => {
       />
 
       
-      <Text style={styles.boldText}>Welcome</Text>
+      <Text style={styles.boldText1}>Welcome</Text>
       <Text style={styles.descriptionText}>Manage your response</Text>
       <Text style={styles.boldText}>Seamlessly & Intuitively</Text>
 
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.googleButton}>
+        <TouchableOpacity style={styles.googleButton} onPress= {onLoginPressed}>
           <View style={styles.googleButtonContent}>
-            <Image
-              source={{
-                uri: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg',
-              }} 
-              style={styles.googleIcon}
-            />
+            
             <Text style={styles.googleButtonText}>Sign in with Google</Text>
           </View>
+          
         </TouchableOpacity>
         <TouchableOpacity style={styles.createAccountButton}>
           <Text style={styles.createAccountButtonText}>Create an Account</Text>
         </TouchableOpacity>
       </View>
 
-      {/* Bottom Text */}
+     
       <View style={styles.footer}>
         <Text style={styles.footerText}>Already have an account?</Text>
         <TouchableOpacity>
@@ -57,7 +61,16 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     marginTop:40,
   },
+  boldText1:{
+    extAlign: 'left',  
+    fontSize: 24,
+    fontWeight: 'bold',
+    
+    color: '#fff', 
+    marginBottom: 10,
+  },
   boldText: {
+     
     fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',

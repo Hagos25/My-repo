@@ -3,10 +3,11 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-
+import { createStaticNavigation } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const SignIns = () => {
-  const [username, setUsername] = useState('ewefwgwrgw');
-  const [password, setPassword] = useState('gergergrgrgrwg');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [isUsernameValid, setIsUsernameValid] = useState(false);
   const [isPasswordValid, setIsPasswordValid] = useState(false);
 
@@ -37,7 +38,7 @@ const SignIns = () => {
         <Text style={styles.subText}>Please sign in to continue</Text>
       </View>
 
-      {/* Username Input */}
+    
       <Text style={styles.inputLabel}>Username</Text>
       <TextInput
         style={styles.input}
@@ -48,7 +49,7 @@ const SignIns = () => {
       />
       {isUsernameValid && <Icon name="checkmark-circle" size={24} color="green" />}
 
-      {/* Password Input */}
+    
       <Text style={styles.inputLabel}>Password</Text>
       <TextInput
         style={styles.input}
@@ -60,17 +61,16 @@ const SignIns = () => {
       />
       {isPasswordValid && <Icon name="checkmark-circle" size={24} color="green" />}
 
-      {/* Forget Password */}
+    
       <TouchableOpacity>
         <Text style={styles.forgetPasswordText}>Forget Password?</Text>
       </TouchableOpacity>
 
-      {/* Sign In Button */}
       <TouchableOpacity style={styles.signInButton}>
         <Text style={styles.signInButtonText}>Sign In</Text>
       </TouchableOpacity>
 
-      {/* Sign Up Section at the Bottom */}
+     
       <View style={styles.signUpSection}>
         <Text style={styles.noAccountText}>Don't have an account?</Text>
         <TouchableOpacity>
@@ -110,6 +110,7 @@ const styles = StyleSheet.create({
     marginVertical: 20,
   },
   welcomeText: {
+    extAlign: 'left', 
     fontSize: 24,
     fontWeight: 'bold',
     color: '#333',
